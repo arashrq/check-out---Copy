@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SwiftCow</title>
+	<link rel="stylesheet" type="text/css" href="content/css/style.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+
+<div class='container' data-ng-app="myApp" data-ng-controller="myCtrl">
+	<div class='window'>
+		<div class='order-info'>
+			<div class='order-info-content'>
+				<h2>Order Summary</h2>
+				<div class='line'></div>
+				<table class='order-table'>
+					<tbody>
+						<tr>
+							<td><img src='content/img/sc1.jpg' class='full-width'></img>
+							</td>
+							<td>
+								 <span class='thin'>Vodka Cruiser Ice</span>
+								 <p>330ml</p>
+								 <span class='thin small' data-ng-model="Count1">Count: {{Count1}}</span>
+							</td>
+						</tr>
+						<tr>
+						  <td>
+							<div class='price' data-ng-model="price1">MYR {{price1}}</div>
+						  </td>
+						</tr>
+					</tbody>
+				</table>
+				<div class='line'></div>
+				<table class='order-table'>
+					<tbody>
+						<tr>
+							<td>
+							<img src='content/img/sc2.jpg' class='full-width'></img>
+							</td>
+							<td>
+								 <span class='thin'>High Altitude Malbec Syrah</span>
+								 <p> 750ml</p> <span class='thin small' data-ng-model="Count2">Count: {{Count2}}</span>
+							</td>
+						</tr>
+						<tr>
+						    <td>
+								<div class='price' data-ng-model="price2">MYR {{price2}}</div>
+						    </td>
+						</tr>
+					</tbody>
+				</table>
+				<div class='line'></div>
+				<table class='order-table'>
+					<tbody>
+						<tr>
+						    <td>
+							<img src='content/img/sc3.jpg' class='full-width'></img>
+						    </td>
+						    <td>
+								 <span class='thin'>Angove Bear Crossing Cabernet Merlot</span>
+								 <p>750ml</p> <span class='thin small' data-ng-model="Count3">Count: {{Count3}}</span>
+						    </td>
+						</tr>
+						<tr>
+							<td>
+								<div class='price' data-ng-model="price3">MYR {{price3}}</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class='line'></div>
+				<div class='total'>
+					<span style='float:left;'>
+						<div class='thin dense'>Delivery Fee</div>
+						TOTAL
+					</span>
+					<span style='float:right; text-align:right;'>
+						<div class='thin dense'>MYR{{delivveryFee}}</div>
+						MYR{{totalPrice}}
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class='credit-info'>
+			<div class='credit-info-content'>
+				<table class='half-input-table'>
+					<tr>
+						<td>Please select your card: </td>
+						<td>
+							<div class='dropdown' id='card-dropdown'><div class='dropdown-btn' id='current-card'>Visa</div>
+								<div class='dropdown-select'>
+									<ul>
+										<li>Master Card</li>
+										<li>American Express</li>
+									</ul>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
+				Card Number
+				<input class='input-field'></input>
+				Card Holder
+				<input class='input-field'></input>
+				<table class='half-input-table'>
+					<tr>
+						<td> Expires
+						  <input class='input-field'></input>
+						</td>
+						<td>CVC
+						  <input class='input-field'></input>
+						</td>
+					</tr>
+				</table>
+				<button class='pay-btn'>Checkout</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="content/js/main.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.totalPrice= "364.22";
+    $scope.delivveryFee= "12";
+	var Count1= parseInt("2")
+	var Count2= parseInt("3")
+	var Count3= parseInt("2")
+	var price1= parseInt("14.19")
+	var price3= parseInt("58.3")
+	var price3= parseInt("74.47")
+	$scope.Count1= Count1;
+	$scope.Count2= Count2;
+	$scope.Count3= Count3;
+	$scope.price1= price1;
+	$scope.price2= price2;
+	$scope.price3= price3;
+});
+</script>
+</body>
+</html>
